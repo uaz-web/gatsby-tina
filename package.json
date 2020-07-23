@@ -5,7 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.23.3",
-    "gatsby-theme-emulsify": "^2.1.0"
+    "gatsby-plugin-tinacms": "^0.24.0",
+    "gatsby-theme-emulsify": "^2.1.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "develop": "gatsby develop",
