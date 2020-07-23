@@ -33,7 +33,10 @@ module.exports = {
         // The CMS will be disabled on your production site
         // enabled: process.env.NODE_ENV !== 'production',
         enabled: true,
-        sidebar: true,
+        sidebar: {
+          // hidden: process.env.NODE_ENV === "production",
+          position: "displace"
+        },
         plugins: [
           "gatsby-tinacms-remark",
           "gatsby-tinacms-json",
