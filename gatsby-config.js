@@ -1,34 +1,26 @@
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
+  pathPrefix: '/gatsby-starter-emulsify-mdx', // for deploying to a folder like on Github pages.
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-theme-emulsify',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        // Site Metadata for style guide
+        siteMetadata: {
+          title: 'MDX Starter',
+          description: '',
+          author: '',
+        },
+        docPagesPath: 'styleguide', // Where your custom style guide pages live
+        componentLibPath: 'components', // Where your component library lives
+        UILibPath: 'https://lucid-colden-c2abf5.netlify.com/iframe.html', // Where your Storybook instance lives. Could be remote or local like "/storybook/iframe.html"
+        basePath: __dirname, // Needed to make above paths relative to your project
+        // designSystems: [
+        //   {
+        //     name: "Basic", // Other design system you may want to link to in a parent/child situation
+        //     link: "/"
+        //   },
+        // ]
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
-}
+};
